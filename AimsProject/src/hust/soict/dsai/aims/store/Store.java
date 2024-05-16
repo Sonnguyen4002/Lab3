@@ -1,23 +1,27 @@
 package hust.soict.dsai.aims.store;
 import hust.soict.dsai.aims.disc.DigitalVideoDisc;
+import hust.soict.dsai.aims.media.Media;
+import java.util.List;
+
+import java.util.ArrayList;
 import hust.soict.dsai.aims.cart.Cart;
 public class Store {
-    Cart ItemInStore;
+    private List<Media> itemsInStore;
 
     public Store() {
-        ItemInStore = new Cart();
-        ItemInStore.unlimited_number();
+        itemsInStore = new ArrayList<>();
     }
-    public void addDVD(DigitalVideoDisc disk) {
-    	if (ItemInStore.search_by_title(disk.getTitle()) == false) {
-    		ItemInStore.addDigitalVideoDisc(disk);
-        System.out.println("This disk has been added");
-    	}
+
+
+    public void addMedia(Media media) {
+        itemsInStore.add(media);
     }
-    public void removeDVD(DigitalVideoDisc disk) {
-    	if (ItemInStore.search_by_title(disk.getTitle()) == true) {
-    		ItemInStore.removeDigitalVideoDisc(disk);
-            System.out.println("This disk has been removed");
-        	}
+    public void removeMedia(Media media) {
+        itemsInStore.remove(media);
     }     
+    public void displayStore() {
+        for (Media media : itemsInStore) {
+            System.out.println(media.toString());
+        }
+    }
 }

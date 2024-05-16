@@ -7,9 +7,9 @@ public class CartTest {
 		DigitalVideoDisc disk1 = new DigitalVideoDisc("tite1", "category1", "director1", 40.0f, 50);
 		DigitalVideoDisc disk2 = new DigitalVideoDisc("tite2", "category2", "director2", 40.0f, 50);
 		DigitalVideoDisc disk3 = new DigitalVideoDisc("tite3", "category3", "director3", 40.0f, 50);
-		new_cart.addDigitalVideoDisc(disk1);
-		new_cart.addDigitalVideoDisc(disk2);
-		new_cart.addDigitalVideoDisc(disk3);
-		new_cart.print();
+		new_cart.addMedia(disk1);
+		new_cart.addMedia(disk2);
+		new_cart.addMedia(disk3);
+		new_cart.displayCart();;
 	}
 }
